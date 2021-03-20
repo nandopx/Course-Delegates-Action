@@ -15,7 +15,9 @@ namespace Course_Delegates_Action
             list.Add(new Product("Tablet", 350.50));
             list.Add(new Product("HD Case", 80.90));
 
-            list.ForEach(UpdatePrice);
+            Action<Product> act = UpdatePrice;
+
+            list.ForEach(act);
 
             foreach (var item in list)
             {
